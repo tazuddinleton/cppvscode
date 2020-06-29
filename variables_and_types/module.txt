@@ -1,0 +1,26 @@
+Fundamental Types: 
+    Numbers, booleans, single characters
+    Numbers 
+        Integer
+            short
+            long
+            int 
+            ushort
+            ulong
+            uint
+        Real Numbers
+            float
+            double
+    Characters
+        char
+        uchar
+    Boolean
+        bool
+
+Auto (Asks the compiler to deduce the type)
+    - variable is still strongly typed
+    - useful for ugly declarations
+
+User Defined Types:
+    Structs and classes
+    Strings, dates, other objects

@@ -1,0 +1,5 @@
+Fundamental Types: 
+    Numbers, booleans, single characters
+User Defined Types:
+    Structs and classes
+    Strings, dates, other objects

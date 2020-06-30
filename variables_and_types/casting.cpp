@@ -8,10 +8,13 @@ int main(){
     double d1 = 2.2;
     
 
-    int i1 = d1; // this is unsafe, we lose the decimal part
+    // this is unsafe, we lose the decimal part
+    // this generates warning
+    int i1 = d1; 
 
-
-    // this is safe cast 
+    // this is safe cast, this tells the compiler 
+    // that you know what you are doing
+    // this will remove the warning
     int i2 = static_cast<int>(d1);
 
     

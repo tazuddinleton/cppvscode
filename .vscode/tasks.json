@@ -2,16 +2,28 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "cl.exe build active file",
+            "label": "clean_build_dir",
+            "type": "shell",
+            "command": "Remove-Item",
+            "args": [
+                "${workspaceFolder}\\build\\**",                
+            ]
+        },
+
+        {
+            "label": "build_active_file",
             "type": "shell",
             "command": "cl.exe",
             "args": [
                 "/Zi",
                 "/EHsc",
                 "/Fe:",
-                "${fileDirname}/${fileBasenameNoExtension}.exe",
-                "${file}"
+                "${workspaceFolder}\\build\\${fileBasenameNoExtension}.exe",
+                "${fileDirname}\\**.cpp"
             ],
+            "options": {
+                "cwd": "${workspaceFolder}\\build"
+            },
             "problemMatcher": [
                 "$msCompile"
             ],
@@ -21,26 +33,11 @@
             }
         },
         {
-            "type": "shell",
-            "label": "C/C++: cl.exe build active file",
-            "command": "cl.exe",
-            "args": [
-                "/Zi",
-                "/EHsc",
-                "/Fe:",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe",
-                "${file}"
-            ],
-            "options": {
-                "cwd": "${fileDirname}"
-            },
-            "problemMatcher": [
-                "$msCompile"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-        }
+            "label": "build",
+            "dependsOn": [
+                "clean_build_dir",
+                "build_active_file"
+            ]
+        }      
     ]
 }

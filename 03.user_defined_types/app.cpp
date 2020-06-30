@@ -3,12 +3,12 @@
 
 int main(){
 
-    Person p1;
-    Person p2;
+    Person p1("Bob", "Martin");
     
+    Person p2;
+
     string name = p1.getName();
 
-
-    cout << "Hello";
+    cout << "Hello, " << name << endl;
     return 0;
 }

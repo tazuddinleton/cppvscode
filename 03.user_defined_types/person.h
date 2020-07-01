@@ -12,9 +12,9 @@ class Person
     public:
         string getName();    
 
-    Person()=default;
+    Person();
     Person(string fname, string lname);
     Person(string fname, string lname, int bookPurchased, double spent);
-    
+    ~Person();
 };
 

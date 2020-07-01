@@ -10,10 +10,9 @@ class Person
 
     public:
         std::string getName();    
-
-    Person();
-    Person(std::string fname, std::string lname);
-    Person(std::string fname, std::string lname, int bookPurchased, double spent);
-    ~Person();
+        Person();
+        Person(std::string fname, std::string lname);
+        Person(std::string fname, std::string lname, int bookPurchased, double spent);
+        ~Person();
 };
 

@@ -9,9 +9,30 @@
                 "${workspaceFolder}\\build\\**",                
             ]
         },
-
         {
             "label": "build_active_file",
+            "type": "shell",
+            "command": "cl.exe",
+            "args": [
+                "/Zi",
+                "/EHsc",
+                "/Fe:",
+                "${workspaceFolder}\\build\\${fileBasenameNoExtension}.exe",
+                "${file}"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}\\build"
+            },
+            "problemMatcher": [
+                "$msCompile"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "build_all_files",
             "type": "shell",
             "command": "cl.exe",
             "args": [
@@ -36,7 +57,7 @@
             "label": "build",
             "dependsOn": [
                 "clean_build_dir",
-                "build_active_file"
+                "build_all_files"
             ]
         }      
     ]

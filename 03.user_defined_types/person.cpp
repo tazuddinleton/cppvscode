@@ -2,21 +2,21 @@
 #include <iostream>
 
 Person::Person(){
-    std::cout << "Constructing: " << getName() << endl;
+    std::cout << "Constructing: " << getName() << std::endl;
 }
 
-Person::Person(string fname, string lname, int booksPurchased, double spent)
+Person::Person(std::string fname, std::string lname, int booksPurchased, double spent)
 :firstname(fname), lastname(lname), numOfBooksPurchased(booksPurchased), totalSpent(spent){}
 
-Person::Person(string fname, string lname):firstname(fname), lastname(lname){
-    std::cout << "Constructing: " << getName() << endl;
+Person::Person(std::string fname, std::string lname):firstname(fname), lastname(lname){
+    std::cout << "Constructing: " << getName() << std::endl;
 }
 
 Person::~Person(){
-    std::cout << "Destructing: " << getName() << endl;
+    std::cout << "Destructing: " << getName() << std::endl;
 }
 
-string Person::getName()
+std::string Person::getName()
 {
     return firstname + " " + lastname;
 }
